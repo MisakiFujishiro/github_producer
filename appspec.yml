@@ -3,3 +3,31 @@ os: linux
 files:
   - source: /target/sqs_producer-0.0.1-SNAPSHOT.jar
     destination: /home/ec2-users
+
+permissions:
+  - object: /home/ec2-users
+    owner: ec2-user
+    group: ec2-user
+    mode: 755
+    type:
+      - directory
+  - object: /home/ec2-users/secret
+    owner: ec2-user
+    group: ec2-user
+    mode: 400
+    type:
+      - file
+  - object: /home/ec2-users/bin
+    pattern: "demo*.sh"
+    owner: ec2-user
+    group: ec2-user
+    mode: 744
+    type:
+      - file
+  - object: /home/ec2-users/bin
+    pattern: "env.sh"
+    owner: ec2-user
+    group: ec2-user
+    mode: 644
+    type:
+      - file
