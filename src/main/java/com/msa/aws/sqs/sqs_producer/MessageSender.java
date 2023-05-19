@@ -13,7 +13,7 @@ public class MessageSender {
     public void sendMessage(){
         String url = "https://sqs.ap-northeast-1.amazonaws.com/626394096352/MA-fujishiroms-sqs-standard";
 
-        String message = "hello SQS!! FROM JAVA!!mirroring";
+        String message = "hello FROM CICD";
 
         SendMessageRequest request = new SendMessageRequest()
                 .withQueueUrl(url)
