@@ -2,8 +2,8 @@ version: 0.0
 os: linux
 files:
   - source: target/sqs_producer-0.0.1-SNAPSHOT.jar
-    destination: /home/ec2-users/
+    destination: /home/ec2-user/
 
 permissions:
-  - object: /home/ec2-users/sqs_producer-0.0.1-SNAPSHOT.jar
+  - object: /home/ec2-user/sqs_producer-0.0.1-SNAPSHOT.jar
     mode: 755
