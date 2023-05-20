@@ -1,0 +1,9 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - cp target/sqs_producer-0.0.1-SNAPSHOT.jar /home/ec2-user/
+artifacts:
+  files:
+    - /home/ec2-user/sqs_producer-0.0.1-SNAPSHOT.jar
