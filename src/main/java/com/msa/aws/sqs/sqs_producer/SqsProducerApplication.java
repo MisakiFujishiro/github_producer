@@ -9,7 +9,7 @@ public class SqsProducerApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(SqsProducerApplication.class, args);
-        for (int i = 0; i < 2; i++){
+        for (int i = 0; i < 10; i++){
             MessageSender sender = context.getBean(MessageSender.class);
             sender.sendMessage();
         }
