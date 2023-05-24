@@ -5,6 +5,8 @@ import com.amazonaws.services.sqs.model.SendMessageRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Random;
+
 @Component
 public class MessageSender {
     @Autowired
@@ -12,8 +14,10 @@ public class MessageSender {
 
     public void sendMessage(){
         String url = "https://sqs.ap-northeast-1.amazonaws.com/626394096352/MA-fujishiroms-sqs-standard";
-
-        String message = "hello FROM CICD";
+        Random rand = new Random();
+        int num = rand.nextInt(10) + 100;
+        System.out.println(num);
+        String message = "hello FROM CICD"+num;
 
         SendMessageRequest request = new SendMessageRequest()
                 .withQueueUrl(url)
