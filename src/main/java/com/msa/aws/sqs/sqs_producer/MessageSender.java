@@ -15,7 +15,7 @@ public class MessageSender {
     public void sendMessage(){
         String url = "https://sqs.ap-northeast-1.amazonaws.com/626394096352/MA-fujishiroms-sqs-standard";
         Random rand = new Random();
-        double num = rand.nextInt(10) *0.1;
+        double num = rand.nextInt(10) ;
         String message = String.valueOf(num);
 
         SendMessageRequest request = new SendMessageRequest()
