@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.msa.aws.sqs.sqs_producer.SqsProducerApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.665 s - in com.msa.aws.sqs.sqs_producer.SqsProducerApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.589 s - in com.msa.aws.sqs.sqs_producer.SqsProducerApplicationTests

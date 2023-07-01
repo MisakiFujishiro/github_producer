@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.Random;
+import java.util.UUID;
 
 @Component
 public class MessageSender {
@@ -29,6 +30,12 @@ public class MessageSender {
                 .withQueueUrl(url)
                 .withMessageBody(message)
                 .withDelaySeconds(5);
+
+        if (url.endsWith(".fifo")){
+            request.withMessageGroupId(UUID.randomUUID().toString())
+                    .withMessageDeduplicationId(UUID.randomUUID().toString());
+        }
+
         amazonSQSClient.sendMessage(request);
     }
 }
