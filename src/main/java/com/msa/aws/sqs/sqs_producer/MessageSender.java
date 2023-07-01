@@ -28,12 +28,14 @@ public class MessageSender {
         // メッセージ送信
         SendMessageRequest request = new SendMessageRequest()
                 .withQueueUrl(url)
-                .withMessageBody(message)
-                .withDelaySeconds(5);
+                .withMessageBody(message);
 
         if (url.endsWith(".fifo")){
             request.withMessageGroupId(UUID.randomUUID().toString())
                     .withMessageDeduplicationId(UUID.randomUUID().toString());
+        }
+        else{
+            request.withDelaySeconds(5);
         }
 
         amazonSQSClient.sendMessage(request);
