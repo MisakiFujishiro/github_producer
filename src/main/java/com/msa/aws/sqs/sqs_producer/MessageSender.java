@@ -31,7 +31,7 @@ public class MessageSender {
                 .withMessageBody(message);
 
         if (url.endsWith(".fifo")){
-            request.withMessageGroupId("SameMessageGroup")
+            request.withMessageGroupId(UUID.randomUUID().toString())
                     .withMessageDeduplicationId(UUID.randomUUID().toString());
         }
         else{
